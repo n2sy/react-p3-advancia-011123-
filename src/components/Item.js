@@ -8,7 +8,10 @@ function Item(props) {
       }}
       className="list-group-item"
     >
-      <img src={`../assets/${props.oneCand.avatar}`}></img>
+      <img
+        style={{ width: "50px", height: "50px", margin: "0 10px" }}
+        src={require(`../assets/${props.oneCand.avatar}`)}
+      ></img>
       {`${props.oneCand.prenom} ${props.oneCand.nom}`}
     </li>
   );
