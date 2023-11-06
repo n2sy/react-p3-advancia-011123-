@@ -1,12 +1,23 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router";
+import React, { useContext, useEffect } from "react";
+import { useParams, useNavigate } from "react-router";
 import CandidatContexte from "../store/CandidatsContexte";
 
 function Infos() {
   const { id } = useParams();
   const CandCtx = useContext(CandidatContexte);
+  const navigate = useNavigate();
 
-  CandCtx.getCandidatById(id);
+  useEffect(() => {
+    CandCtx.getCandidatById(id);
+    console.log(CandCtx.selCand);
+  }, []);
+
+  function onDelete() {
+    if (window.confirm("Etes vous sur de vouloir supprimer ce candidat ?")) {
+      CandCtx.deleteCandidat(id);
+      navigate("/cv");
+    }
+  }
 
   return (
     <div class="d-flex justify-content-center">
@@ -64,8 +75,17 @@ function Infos() {
                   </tbody>
                 </table>
                 <div class="d-flex justify-content-center">
-                  <button class="btn btn-danger">Delete</button>
-                  <button class="btn btn-primary">Update</button>
+                  <button onClick={onDelete} class="btn btn-danger">
+                    Delete
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigate(`/cv/${CandCtx.selectedCandidat?._id}/edit`);
+                    }}
+                    class="btn btn-primary"
+                  >
+                    Update
+                  </button>
                 </div>
               </div>
             </div>

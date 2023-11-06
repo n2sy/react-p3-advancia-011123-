@@ -5,6 +5,7 @@ const CandidatContexte = createContext({
   getAllCandidats: () => {},
   getCandidatById: () => {},
   addNewCandidat: () => {},
+  deleteCandidat: () => {},
 });
 
 export function CandidatContexteProvider(props) {
@@ -40,12 +41,26 @@ export function CandidatContexteProvider(props) {
       });
   }
 
+  function deleteCandidat(id) {
+    fetch(`http://localhost:3001/cv/persons/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Candidat supprimé avec succès");
+      });
+  }
+
   const c = {
     tabCandidats: tabCands,
     getAllCandidats: getCandidats,
     getCandidatById: getCandById,
     addNewCandidat: addCandidat,
     selectedCandidat: selCand,
+    deleteCandidat: deleteCandidat,
   };
 
   return (

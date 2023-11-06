@@ -8,6 +8,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import CandidatUpdateForm from "./components/CandidatUpdateForm";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <Route path="cv" element={<Cv></Cv>}></Route>
         <Route path="cv/add" element={<AddCv></AddCv>}></Route>
         <Route path="cv/:id" element={<Infos></Infos>}></Route>
+        <Route
+          path="cv/:id/edit"
+          element={<CandidatUpdateForm></CandidatUpdateForm>}
+        ></Route>
         <Route path="not-found" element={<NotFound></NotFound>}></Route>
         <Route
           path="*"
