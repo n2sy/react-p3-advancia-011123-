@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Details(props) {
   if (!props.selectedCandidat) {
@@ -63,15 +64,9 @@ function Details(props) {
             </div>
             <div class="footer">
               <div class="social-links text-center">
-                <a href="https://creative-tim.com" class="facebook">
-                  <i class="fa fa-facebook fa-fw"></i>
-                </a>
-                <a href="https://creative-tim.com" class="google">
-                  <i class="fa fa-google-plus fa-fw"></i>
-                </a>
-                <a href="https://creative-tim.com" class="twitter">
-                  <i class="fa fa-twitter fa-fw"></i>
-                </a>
+                <button className="btn btn-info">
+                  <Link to={`/cv/${props.selectedCandidat._id}`}>Details</Link>
+                </button>
               </div>
             </div>
           </div>
