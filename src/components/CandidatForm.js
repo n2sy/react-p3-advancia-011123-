@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import CandidatContexte from "../store/CandidatsContexte";
+import { useNavigate } from "react-router-dom";
 
 function CandidatForm() {
   const [formValue, setFormValue] = useState({
@@ -9,12 +11,24 @@ function CandidatForm() {
     avatar: "",
   });
 
+  const CandCtx = useContext(CandidatContexte);
+  const navigate = useNavigate();
+
   function submitHandler(e) {
     e.preventDefault();
+    CandCtx.addNewCandidat(formValue);
+    navigate("/cv");
   }
 
   function changeHandler(e) {
     // e c'est l'event onChange
+    // console.log(e.target.name);
+    // console.log(e.target.value);
+    setFormValue((prev) => {
+      prev[e.target.name] = e.target.value;
+      console.log(prev);
+      return prev;
+    });
   }
 
   return (

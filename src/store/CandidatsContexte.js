@@ -4,6 +4,7 @@ const CandidatContexte = createContext({
   tabCandidats: [],
   getAllCandidats: () => {},
   getCandidatById: () => {},
+  addNewCandidat: () => {},
 });
 
 export function CandidatContexteProvider(props) {
@@ -25,10 +26,25 @@ export function CandidatContexteProvider(props) {
       });
   }
 
+  function addCandidat(newCand) {
+    fetch("http://localhost:3001/cv/persons", {
+      method: "POST",
+      body: JSON.stringify(newCand),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Candidat ajouté avec succès");
+      });
+  }
+
   const c = {
     tabCandidats: tabCands,
     getAllCandidats: getCandidats,
     getCandidatById: getCandById,
+    addNewCandidat: addCandidat,
     selectedCandidat: selCand,
   };
 
