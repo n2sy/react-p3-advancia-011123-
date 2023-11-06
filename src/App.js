@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Cv from "./pages/Cv";
-import Infos from "./components/Ìnfos";
+import Infos from "./components/Infos";
 import { CandidatContexteProvider } from "./store/CandidatsContexte";
 import AddCv from "./pages/AddCv";
 import { Navigate, Route, Routes } from "react-router-dom";

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useParams } from "react-router";
 import CandidatContexte from "../store/CandidatsContexte";
 
-function Ìnfos() {
+function Infos() {
   const { id } = useParams();
   const CandCtx = useContext(CandidatContexte);
 
@@ -76,4 +76,4 @@ function Ìnfos() {
   );
 }
 
-export default Ìnfos;
+export default Infos;
