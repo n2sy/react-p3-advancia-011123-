@@ -7,10 +7,12 @@ import AddCv from "./pages/AddCv";
 import { Navigate, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="container">
+      <Navbar></Navbar>
       <Routes>
         <Route path="" element={<Home></Home>}></Route>
         <Route path="cv" element={<Cv></Cv>}></Route>
