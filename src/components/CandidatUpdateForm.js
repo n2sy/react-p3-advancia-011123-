@@ -18,7 +18,6 @@ function CandidatUpdateForm() {
   useEffect(() => {
     CandCtx.getCandidatById(id);
   }, []);
-  console.log(CandCtx.selCand);
 
   function submitHandler(e) {
     e.preventDefault();
@@ -39,7 +38,7 @@ function CandidatUpdateForm() {
       <input
         className="form-control"
         name="prenom"
-        value={CandCtx.selCand?.prenom}
+        defaultValue={CandCtx.selectedCandidat?.prenom}
         onChange={changeHandler}
       ></input>
       <label>Nom</label>

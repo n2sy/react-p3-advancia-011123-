@@ -24,6 +24,11 @@ function Navbar() {
           Login
         </Link>
       </li>
+      <li class="nav-item">
+        <Link class="nav-link" to="/watch">
+          Watch
+        </Link>
+      </li>
     </ul>
   );
 }

@@ -9,9 +9,9 @@ function Infos() {
 
   useEffect(() => {
     CandCtx.getCandidatById(id);
-    console.log(CandCtx.selCand);
   }, []);
 
+  console.log(CandCtx.selCand);
   function onDelete() {
     if (window.confirm("Etes vous sur de vouloir supprimer ce candidat ?")) {
       CandCtx.deleteCandidat(id);

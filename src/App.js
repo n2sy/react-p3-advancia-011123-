@@ -4,6 +4,7 @@ import Cv from "./pages/Cv";
 import Infos from "./components/Infos";
 import { CandidatContexteProvider } from "./store/CandidatsContexte";
 import AddCv from "./pages/AddCv";
+import Watch from "./pages/Watch";
 import { Navigate, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
@@ -23,6 +24,7 @@ function App() {
           path="cv/:id/edit"
           element={<CandidatUpdateForm></CandidatUpdateForm>}
         ></Route>
+        <Route path="watch" element={<Watch></Watch>}></Route>
         <Route path="not-found" element={<NotFound></NotFound>}></Route>
         <Route
           path="*"
