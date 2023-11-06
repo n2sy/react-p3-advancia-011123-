@@ -18,7 +18,11 @@ function Ìnfos() {
                 width="150px"
                 height="150px"
                 class="rounded-circle align-content-center"
-                src=""
+                src={
+                  CandCtx.selectedCandidat.avatar
+                    ? require(`../assets/${CandCtx.selectedCandidat?.avatar}`)
+                    : ""
+                }
                 alt=""
               ></img>
             </div>

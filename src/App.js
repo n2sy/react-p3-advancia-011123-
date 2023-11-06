@@ -13,6 +13,7 @@ function App() {
     <div className="container">
       <Routes>
         <Route path="" element={<Home></Home>}></Route>
+        <Route path="cv" element={<Cv></Cv>}></Route>
         <Route path="cv/add" element={<AddCv></AddCv>}></Route>
         <Route path="cv/:id" element={<Infos></Infos>}></Route>
         <Route path="not-found" element={<NotFound></NotFound>}></Route>
@@ -21,7 +22,6 @@ function App() {
           element={<Navigate to="/not-found" replace></Navigate>}
         ></Route>
       </Routes>
-      <Cv></Cv>
     </div>
   );
 }

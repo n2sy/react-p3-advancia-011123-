@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Item from "./Item";
 import CandidatContexte from "../store/CandidatsContexte";
 
 function Liste(props) {
+  console.log("Dans liste");
   const CandCtx = useContext(CandidatContexte);
-  CandCtx.getAllCandidats();
+  useEffect(() => {
+    CandCtx.getAllCandidats();
+  }, []);
   return (
     <ol className="list-group">
       {CandCtx.tabCandidats.map((cand) => {

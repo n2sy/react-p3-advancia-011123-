@@ -15,7 +15,7 @@ function Details(props) {
             <div class="user">
               <img
                 class="img-circle"
-                src={require(`../assets/${props.selectedCandidat.avatar}`)}
+                src={require(`../assets/${props.selectedCandidat?.avatar}`)}
               ></img>
             </div>
             <div class="content">
